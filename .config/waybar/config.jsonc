@@ -39,7 +39,7 @@
   },
   "custom/archicon": {
     "format": "",
-    "on-click": "wofi --show drun",
+    "on-click": "wofi -s ~/.config/wofi/style.css drun",
     "tooltip": false
   },
   "clock": {
