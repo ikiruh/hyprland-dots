@@ -1,0 +1,147 @@
+* {
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 10px;
+}
+
+window#waybar {
+  background: rgba(34, 36, 54, 0.6);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#custom-archicon,
+#custom-updates,
+#clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#language {
+  color: #c0caf5;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: none;
+}
+
+#custom-archicon,
+#cpu,
+#idle_inhibitor {
+  margin-left: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#clock,
+#temperature,
+#custom-updates {
+  margin-right: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* -- Specific styles -- */
+
+/* Modules left */
+#custom-archicon {
+  font-size: 20px;
+  color: #9ece6a;
+  background: #24283b;
+  padding-right: 17px;
+}
+
+#clock,
+#memory,
+#temperature,
+#idle_inhibitor,
+#network,
+#custom-updates {
+  background: #414868;
+}
+
+#cpu,
+#disk,
+#pulseaudio,
+#language {
+  background: #24283b;
+}
+
+/* Modules center */
+#workspaces {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 6px 5px;
+  padding: 0px 6px;
+}
+
+#workspaces button {
+  color: #c0caf5;
+  background: transparent;
+  padding: 4px 4px;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button.occupied {
+  color: #73daca;
+}
+
+#workspaces button.active {
+  color: #9ece6a;
+  text-shadow: 0 0 4px #73daca;
+}
+
+#workspaces button:hover {
+  color: #9ece6a;
+}
+
+/* Modules right */
+#taskbar {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin: 6px 5px;
+}
+
+#taskbar button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#taskbar button:hover {
+  background: rgba(34, 36, 54, 0.5);
+}
+
+#idle_inhibitor {
+  padding-right: 15px;
+}
+
+#network {
+  padding-right: 13px;
+}
+
+#language {
+  padding-right: 15px;
+}
+
+/* === Optional animation === */
+@keyframes blink {
+  to {
+    background-color: #BF616A;
+    color: #B5E8E0;
+  }
+}

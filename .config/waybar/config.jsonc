@@ -1,0 +1,152 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  
+  "modules-left": [
+    "custom/archicon",
+    "clock",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "wlr/taskbar",
+    "idle_inhibitor",
+    "pulseaudio",
+    "network",
+    "hyprland/language",
+    "custom/updates"
+  ],
+  
+  "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+        "has-updates": "󱍷",
+        "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+  "custom/archicon": {
+    "format": "",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "Europe/Ulyanovsk",
+    "format": "{:%H:%M  %m/%d/%y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#7aa2f7'><b>{}</b></span>",
+        "days":       "<span color='#c0caf5'><b>{}</b></span>",
+        "weeks":      "<span color='#e0af68'><b>W{}</b></span>",
+        "weekdays":   "<span color='#e0af68'><b>{}</b></span>",
+        "today":      "<span color='#f7768e'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+        "on-click-right": "mode",
+        "on-scroll-up": "tz_up",
+        "on-scroll-down": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true,
+    "tooltip-format": "CPU usage: {usage}%\nNuclei: {cores}"
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM in use: {used} / {total} ({percentage}%)"
+  },
+  "disk": {
+    "format": "{percentage_free}% ",
+    "tooltip": true,
+    "tooltip-format": "Free space: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Current temperature: {temperatureC}°C\nCritical > 80°C",
+    "format-icons": [
+      ""
+    ]
+  },
+  
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "*": 2
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "hyprland/language": {
+    "format": "{} ",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "format-ru": "RUS",
+    "format-en": "ENG"
+  }
+}
