@@ -13,11 +13,11 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "tray",
         "idle_inhibitor",
         "pulseaudio",
         "network",
         "hyprland/language",
+        "tray",
         "custom/updates",
         "group/powermenu"
     ],
@@ -161,7 +161,7 @@
     },
     "custom/power": {
         "format": "",
-        "tooltip-format": "Shutdown",
-        "on-click": "shutdown"
+        "tooltip-format": "Poweroff",
+        "on-click": "poweroff"
     }
 }
