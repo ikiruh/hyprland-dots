@@ -1,0 +1,11 @@
+width=600
+height=400
+location=center
+show=drun
+normal_window=true
+allow_images=true
+image_size=16
+allow_markup=false
+columns=1
+sort_order=default
+gtk_dark=true
