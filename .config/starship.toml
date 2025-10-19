@@ -1,0 +1,55 @@
+format = """
+[  ](bg:#c0caf5 fg:#212736)\
+$username\
+[](bg:#a9b1d6 fg:#c0caf5)\
+$directory\
+[](fg:#a9b1d6 bg:#9aa5ce)\
+$git_branch\
+$git_status\
+[](fg:#9aa5ce bg:#565f89)\
+$golang\
+$python\
+[ ](fg:#565f89)\
+\n$character"""
+
+[username]
+show_always = true
+style_user = "bold bg:#c0caf5 fg:#212736"
+style_root = "bold bg:#c0caf5 fg:#212736"
+format = '[$user ]($style)'
+disabled = false
+
+[directory]
+style = "bold fg:#24283b bg:#a9b1d6"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bold bg:#9aa5ce"
+format = '[[ $symbol $branch ](fg:#24283b bg:#9aa5ce)]($style)'
+
+[git_status]
+style = "bold bg:#9aa5ce"
+format = '[[($all_status$ahead_behind )](fg:#24283b bg:#9aa5ce)]($style)'
+
+[golang]
+symbol = ""
+style = "bold bg:#565f89"
+format = '[[ $symbol ($version) ](fg:#c0caf5 bg:#565f89)]($style)'
+
+[python]
+symbol = ""
+style = "bold bg:#565f89"
+format = '[[ $symbol ($version) ](fg:#c0caf5 bg:#565f89)]($style)'
+
+[character]
+success_symbol = '[❯](#a3aed2)'
+error_symbol = '[✗](#f7768e)'
