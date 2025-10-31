@@ -1,12 +1,12 @@
 * {
-    font-family: "JetbrainsMono Nerd Font Propo";
+    font-family: "Fira Sans", "JetbrainsMono Nerd Font Propo";
     border: none;
     font-size: 15px;
     font-weight: 700;
 }
 
 @define-color foreground-color #a9b1d6;
-@define-color background-color rgba(36, 40, 59, 0.8);
+@define-color background-color rgba(36, 40, 59, 1);
 @define-color background-color-context rgba(36, 40, 59, 1);
 @define-color background-invisible rgba(0, 0, 0, 0);
 @define-color click-color #9ece6a;
